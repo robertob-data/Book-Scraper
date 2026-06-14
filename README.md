@@ -30,6 +30,7 @@ Projeto/
 │
 ├── imagens/
 │   ├── execucao_scraper.png
+│   └── json-exemplo.png
 │   └── resultado_scraper.png
 │
 ├── main.py
@@ -50,7 +51,7 @@ Projeto/
 
 ## Resultado em JSON
 
-![Resultado JSON](imagens/json_exemplo.png)
+![Resultado JSON](imagens/json-exemplo.png)
 
 ## Como Executar
 

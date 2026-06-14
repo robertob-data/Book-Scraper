@@ -5,7 +5,7 @@ import random
 
 livros_prontos = []
 
-estrelas_dict = {'One' : '1', 'Two' : '2', 'Three' : '3', 'Four' : '4', 'Five' : '5'}
+estrelas_dict = {'One' : 1, 'Two' : 2, 'Three' : 3, 'Four' : 4, 'Five' : 5}
 
 
 def requisiçao(url):
@@ -14,7 +14,7 @@ def requisiçao(url):
     
 #tenta capturar o html
     try:
-        resposta = requests.get(url,headers=meus_headers)
+        resposta = requests.get(url,headers=meus_headers, timeout=10)
         time.sleep(random.randint(2,5))
 
         if resposta.status_code == 200:
@@ -41,8 +41,8 @@ def sopa(html):
         
         #preço do livro
         preco_sujo = livro.find('p', class_='price_color')
-        preco_limpo = preco_sujo.text
-        preco = preco_limpo.replace('Â£', '£ ')
+        preco_limpo = preco_sujo.get_text(strip=True)
+        preco = float(preco_limpo.replace('Â£', '').replace('£', ''))
         
         #Avaliaçao
         # Converte a classe CSS de avaliação para um valor numérico
@@ -54,10 +54,11 @@ def sopa(html):
         modelo = {
             'Titulo' : titulo,
             'Preço' : preco,
-            'Avaliaçao(0/5)' : avaliaçao
+            'Moeda' : '£',
+            'Avaliacao': '⭐' * avaliaçao
         }
         
-        print(f'[SISTEMA] livro {titulo} DE ÍNDICE {i} Coletado com Sucesso')
+        print(f'[SISTEMA] livro {titulo} DE ÍNDICE {i+1} Coletado com Sucesso')
         time.sleep(0.03)
 
         livros_prontos.append(modelo)
