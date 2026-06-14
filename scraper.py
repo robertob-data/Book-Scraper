@@ -55,7 +55,7 @@ def sopa(html):
             'Titulo' : titulo,
             'Preço' : preco,
             'Moeda' : '£',
-            'Avaliacao': '⭐' * avaliaçao
+            'Avaliacao (0/5)': avaliaçao
         }
         
         print(f'[SISTEMA] livro {titulo} DE ÍNDICE {i+1} Coletado com Sucesso')
