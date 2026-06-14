@@ -48,6 +48,10 @@ Projeto/
 
 ![Resultado da coleta](imagens/resultado_scraper.png)
 
+## Resultado em JSON
+
+![Resultado JSON](imagens/json_exemplo.png)
+
 ## Como Executar
 
 ```bash
