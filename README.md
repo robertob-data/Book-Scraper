@@ -4,7 +4,7 @@ Projeto desenvolvido em Python para coleta automatizada de dados do site BooksTo
 
 ## Objetivo
 
-Praticar conceitos de Web Scraping utilizando Requests e BeautifulSoup, incluindo paginação, tratamento de erros, organização modular do código e persistência de dados em JSON.
+Web Scraping utilizando Requests e BeautifulSoup, incluindo paginação, tratamento de erros, organização modular do código e persistência de dados em JSON.
 
 ## Funcionalidades
 
